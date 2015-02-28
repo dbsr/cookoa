@@ -19,9 +19,11 @@
     "koa-router": "^4.2.0",
     "lodash": "^3.3.1",
     "request": "^2.53.0",
+    "require-dir": "^0.1.0",
     "thunkify": "^2.1.2"
   },
   "devDependencies": {
+    "co-mocha": "^1.1.0",
     "mocha": "^2.1.0",
     "supertest": "^0.15.0"
   }
