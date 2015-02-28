@@ -9,12 +9,12 @@
 let assert = require('assert'),
     fs = require('fs');
 
+let parser = require('../../../ingredients/raw/parser.js');
 require('co-mocha');
 
 describe('parser', function() {
   it('have correctly mapped the parsed result', function *(done) {
-    let parser = require('../parser.js'),
-        html = fs.readFileSync(__dirname + '/fixtures/parser.html', 'utf8'),
+    let html = fs.readFileSync(__dirname + '/fixtures/parser.html', 'utf8'),
         opts = {
           source: html,
           mappings: {
@@ -51,7 +51,6 @@ describe('parser', function() {
             }
           }],
         },
-        
         parsed = yield parser(opts);
 
     // we should have 11 results
@@ -59,8 +58,8 @@ describe('parser', function() {
 
     // the last result's href
     assert.equal(
-        parsed.results[10].href, 
-        '/l/Archer-2009-S06E08-HDTV-x264-KILLERS-rar/fr00t1q0');
+       parsed.results[10].href, 
+       '/l/Archer-2009-S06E08-HDTV-x264-KILLERS-rar/fr00t1q0');
 
     // the second result's filehost should be turbobit.net
     assert.equal(parsed.results[1].filehost, 'turbobit.net');

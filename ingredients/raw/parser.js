@@ -10,7 +10,6 @@ let cheerio = require('cheerio'),
     _ = require('lodash');
 
 
-
 function getTargets(source, mapTarget) {
   let $ = cheerio.load(source);
   return _.map(
@@ -49,8 +48,6 @@ function addResult(protoResult, mapTarget, result) {
   return protoResult;
 }
 
-
-
 function parse(opts) {
   let source = opts.source,
       protoResult = opts.mappings;
@@ -65,7 +62,6 @@ function parse(opts) {
 module.exports = function (opts) {
   return function(callback) {
     let result = parse(opts);
-    console.log(result);
     callback(null, result);
   };
 };

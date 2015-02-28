@@ -6,7 +6,7 @@
 
 'use strict';
 
-let request = require('../request.js'),
+let request = require('../../../ingredients/raw/request.js'),
     assert = require('assert');
 
 require('co-mocha');
